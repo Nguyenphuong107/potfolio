@@ -1,0 +1,175 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* header  */
+header {
+    z-index: 99999;
+}
+header .navbar-nav li {
+    position: relative;
+}
+
+header .navbar-nav li::after {
+    content: "";
+    background-color: green;
+    height: 3px;
+    width: 0;
+    position: absolute;
+    transition: 0.5s;
+}
+
+
+header .navbar-nav li:hover::after {
+    width: 100%;
+} 
+
+header .navbar-nav li:hover a {
+    color: green !important;
+}
+header .navbar-nav li.active::after {
+    width: 100%;
+}
+header .navbar-nav li.active a {
+    color: green !important;
+}
+/* cyber carousel */
+.cyber_carousel .carousel-inner .carousel-item {
+    height: 100vh;
+}
+
+.cyber_carousel .carousel-inner .carousel-item .carousel_content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(39, 43, 54, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.cyber_carousel .carousel-inner .carousel-item {
+    height: 100%;
+    object-fit: cover;
+}
+.cyber_carousel .carousel-inner .carousel-item .carousel_content img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+.cyber_carousel .carousel-indicators button {
+    width: 13PX;
+    height: 13px;
+    border-radius: 50%;
+}
+.cyber_carousel .carousel-indicators button.active {
+    background-color: green;
+}
+/* prọject */
+.cyber_project .project_content ul button.active{
+    background-color: green;
+    color: white !important;
+    border: 2px solid green !important;
+}
+
+.cyber_project .project_content .project_item {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    
+}
+.cyber_project .project_content .project_item .project_text {
+    transition: all 0.5s;
+    border: 2px solid transparent;
+    border-top: none;
+    border-radius: 0 0 16px 16px;
+}
+.cyber_project .project_content .project_item h4 {
+    transition: all 0.5s;
+}
+
+.cyber_project .project_content .project_item:hover h4 {
+    color: green;
+}
+.cyber_project .project_content .project_item:hover .project_text {
+    /* border: 2px  greenyellow solid; */
+    border-color: green;
+    
+}
+/* avaiable */
+.cyber_avai {
+    background-image: url(./../img/3.jpg);
+    background-attachment: fixed;
+    color: white;
+    padding: 60px 0;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+}
+.cyber_avai::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.306);
+}
+.avai_content {
+    display: flex;
+    gap: 20px;
+}
+
+.avai_content .avai_item {
+    background: rgba( 255, 255, 255, 0.15 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 3px );
+-webkit-backdrop-filter: blur( 3px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+padding: 30px ;
+}
+.avai_content .avai_item i {
+    font-size: 40px;
+    color: green;
+}
+.avai_content .avai_item h3 {
+    margin: 20px 0 ;
+    font-size: 18px;
+    font-weight: bold;
+}
+.avai_content .avai_item:hover {
+    background-color: black;
+    border-color: white;
+}
+
+
+/*  khi sử dụng @media nếu dùng max-width thì sẽ lấy tất cả các thiết bị có vùng nhìn từ 0 cho đến giá trị max-width nhận vào */
+/* quy tắc use @media với max-width: là các @media có giá trị lớn hơn nằm trên */
+@media screen and (max-width: 1400px)  {
+    .avai_content{
+        flex-wrap: wrap;
+    }    
+    .avai_content .avai_item {
+        width: calc(100%/3 - 20px);
+    }
+}
+@media screen and (max-width: 768px)  {  
+    .avai_content .avai_item {
+        width: calc(50% - 20px);
+    }
+}
+@media screen and (max-width: 576px)  {
+    .avai_content .avai_item {
+        width: 100%;
+    } 
+}
+
+
+
+
+
+
+
